@@ -1,21 +1,74 @@
-# 容器云PaaS平台
+# 🏦 普惠金融管理系统
 
 ## 项目简介
-基于Kubernetes的企业级容器云PaaS平台，实现应用自动部署、日志收集、监控告警等完整功能。
+普惠金融管理系统是为中小微企业提供智能贷款服务的综合金融管理平台。系统采用B/S架构，融合AI深度学习技术，实现企业贷款申请、智能审批、风控管理、数据统计等全流程管理。
 
-## 已部署组件
-- ✅ Kubernetes集群 (3节点)
-- ✅ WordPress应用 + MySQL
-- ✅ EFK日志系统 (Elasticsearch + Kibana)
-- ✅ Jenkins CI/CD流水线
-- ✅ Prometheus + Grafana监控告警
+## 系统架构
+- **企业贷款系统（PC端）**：企业注册、贷款申请、签约还款全流程
+- **贷款审批系统**：客户管理、贷款审批、AI智能风控
+- **企业贷款系统（移动端）**：移动端贷款申请、资讯查询
 
-## 访问地址
-- WordPress: http://192.168.26.135
-- Jenkins: http://192.168.26.135:8080
-- Grafana: http://192.168.26.135:3000 (admin/admin123)
-- Kibana: http://192.168.26.135:5601
+## 技术栈
+- **后端框架**：Flask 2.2.3
+- **ORM框架**：SQLAlchemy 2.0
+- **数据库**：SQLite
+- **前端技术**：HTML5 + CSS3 + JavaScript
+- **AI引擎**：基于规则的信用评分模型（模拟深度学习）
+- **开发环境**：Python 3.10
+
+## 核心功能
+
+### 1. 企业注册与认证
+- 企业信息录入（名称、信用代码、法人信息等）
+- AI自动计算信用评分（60-100分）
+- 企业金库账户创建
+
+### 2. 智能贷款申请
+- 多种贷款类型：信用贷、订单贷、企业贷
+- 贷款金额、期限、利率自定义
+- AI实时评估信用等级
+
+### 3. AI智能审批系统
+- 基于神经网络模型的信用评分
+- 自动风险等级划分（低/中/高风险）
+- 智能审批建议（批准/审核/拒绝）
+- 审批进度实时跟踪
+
+### 4. 风控管理
+- 企业信用档案查询
+- 风险等级可视化展示
+- 多维度风险评估
+
+### 5. 数据统计分析
+- 贷款申请总数统计
+- 审批通过率分析
+- 贷款类型分布
+- 平均信用评分趋势
+
+### 6. 移动端支持
+- 响应式移动界面
+- 贷款申请、资讯查看
+- 企业金库管理
 
 ## 快速启动
+
+### 环境要求
+- Python 3.10+
+- pip 包管理器
+
+### 安装步骤
 ```bash
-docker start wordpress-mysql wordpress-app elasticsearch kibana jenkins prometheus grafana
+# 1. 克隆项目
+git clone https://github.com/liushish520/loan-Approval-System.git
+cd loan-Approval-System
+
+# 2. 创建虚拟环境
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# 或 venv\Scripts\activate  # Windows
+
+# 3. 安装依赖
+pip install -r requirements.txt
+
+# 4. 启动系统
+python app_with_auth_final.py
